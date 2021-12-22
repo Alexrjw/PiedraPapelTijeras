@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Audiowide', cursive;
+    font-family: 'Quicksand', sans-serif;
+    
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background: rgb(41, 41, 41);
+    position: relative;
+}
+.container{
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 30%;
+    left: 50%;
+    transform:translate( -50% , -50%)
+}
+
+/* BOTONES */
+
+
+
+button{
+    width: 6em;
+    height: 6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: rgb(34, 31, 31);
+    padding: 1em 2em;
+    margin-right: 4em;
+    color: rgb(105, 105, 105);
+    font-size: 1.6em;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgb(0, 0, 0),-2px -2px 15px rgb(76, 76, 76);
+    transition: .1s linear;
+}
+.container #tijeras{
+    margin-right: 0;
+}
+i{
+    font-size: 3em;
+}
+
+.maquina{
+    margin-top: 1em;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 70%;
+    left: 50%;
+    transform:translate( -50% , -50%);
+    color: red;
+
+}
+.maquina i{
+    position: absolute;
+}
+i.oculto{
+    display: none;
+}
+
+
+.container button:hover{
+    color: rgb(191, 191, 191);
+}
+.containerbutton:active{
+    box-shadow: none;
+}
+.container button.selccionado{
+    box-shadow: none;
+    color: rgb(191, 191, 191);
+} 
+
+
+
+
+
+
+
+/* VENTANA EMERGENTE */
+.ventana{
+    z-index: 999;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    backdrop-filter: blur(3px);
+    animation: resultado .3s  linear;
+}
+.ventana .mensaje{
+    border-radius: 10px;
+    box-shadow: 1px 1px 50px rgb(0, 0, 0);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 30em;
+    height: 8em;
+    padding: 0 3em;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform:translate( -50% , -50%);
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 1.7em;
+
+}
+.display{
+    animation: .4s linear display;
+    display: none;
+}
+@keyframes resultado{
+    0%{
+        transform: scale(0%);
+    }
+    50%{
+        transform: scale(50%);
+    }
+    100%{
+        display: block;
+        transform: scale(100%);
+    }
+}
